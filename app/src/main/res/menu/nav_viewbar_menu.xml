@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_video"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home"
+       />
+
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_trend"
+        android:title="@string/trending"
+         />
+
+    <item
+        android:id="@+id/menu_search1"
+        android:icon="@drawable/ic_sub"
+        android:title="@string/subscription"
+         />
+    <item
+        android:id="@+id/menu_search2"
+        android:icon="@drawable/ic_bell"
+        android:title="@string/activity"
+         />
+    <item
+        android:id="@+id/menu_search3"
+        android:icon="@drawable/ic_lib"
+        android:title="@string/library"
+         />
+
+</menu>

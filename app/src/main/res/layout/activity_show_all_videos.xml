@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShowAllVideosActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel1">
+
+        <!--toolbar 1-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rel2">
+
+            <include layout="@layout/layout_top_toolbar" />
+
+        </RelativeLayout>
+
+        <!--body-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rel3"
+            android:layout_below="@id/rel2"
+            android:layout_above="@id/rel5">
+
+            <include layout="@layout/layout_center_viewpager" />
+        </RelativeLayout>
+
+        <!--Bottom Navibar-->
+        <include layout="@layout/layout_bottom_nav" />
+
+    </RelativeLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

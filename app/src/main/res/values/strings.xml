@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">UVideoPlayer</string>
+    <string name="home">Home</string>
+    <string name="trending">Trending</string>
+    <string name="subscription">Subscription</string>
+    <string name="activity">Activity</string>
+    <string name="library">Library</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
