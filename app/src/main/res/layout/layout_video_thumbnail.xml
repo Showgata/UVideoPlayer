@@ -6,10 +6,11 @@
     android:paddingTop="@dimen/size_16dp"
         >
 
-        <VideoView
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="@dimen/size_192dp"
-            android:id="@+id/videoView"/>
+            android:id="@+id/videoView"
+            android:background="@color/grey"/>
 
         <include layout="@layout/snippet_video_details"/>
 
