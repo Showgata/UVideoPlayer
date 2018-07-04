@@ -13,6 +13,7 @@ import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,8 @@ public class VideoListFragment extends Fragment implements LoaderManager.LoaderC
     private static final String STATE_IN_PERMISSION="inPermission";
     private static final int REQUEST_PERMS=137;
     private boolean isInPermission=false;
+
+    private static final String TAG = "VideoListFragment";
 
     public VideoListFragment() {
 
@@ -116,6 +119,7 @@ public class VideoListFragment extends Fragment implements LoaderManager.LoaderC
 
     @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+        Log.d(TAG, "onLoadFinished: noOfItems="+data.getCount());
         adapter.setVideos(data);
     }
 

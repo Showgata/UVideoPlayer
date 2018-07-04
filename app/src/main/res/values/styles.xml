@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Thumbnail">
+        <item name="android:layout_width">@dimen/size_152dp</item>
+        <item name="android:layout_height">@dimen/size_96dp</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
 </resources>

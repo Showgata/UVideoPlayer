@@ -1,63 +1,83 @@
 package com.example.showgata12.uvideoplayer.Adapters;
 
 import android.content.Context;
+import android.database.Cursor;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.VideoView;
 
+import com.example.showgata12.uvideoplayer.Generators.RandomSelector;
 import com.example.showgata12.uvideoplayer.R;
+
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class VideoListAdapter extends RecyclerView.Adapter<VideoListAdapter.MyViewHolder> {
+public class VideoListAdapter extends RecyclerView.Adapter<ControlRowII> {
 
+    private Cursor c =null;
+    private LayoutInflater inflater=null;
+    private Uri currentVideo;
+    private Set<Integer> selItems;
+
+    private static final String TAG = "VideoListAdapter";
 
 
     public VideoListAdapter()
     {
 
+
     }
+
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ControlRowII onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.layout_video_thumbnail,null);
+                .inflate(R.layout.snippet_layout_single_video_thumbnail,null);
 
-        return new MyViewHolder(v);
+        return new ControlRowII(v,c.getCount());
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ControlRowII holder, int position) {
+
+
+        c.moveToPosition(position);
+        holder.bindModel(c);
+
 
     }
 
     @Override
     public int getItemCount() {
-        return 20;
+        if(c == null){return 0;}
+
+        return 10;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder
+    public void setVideos(Cursor c)
     {
-        private CircleImageView videoOwner;
-        private TextView videoTitle;
-        private TextView videoDate;
-        private TextView videoUserName;
-        private VideoView videoView;
+        this.c =c;
+        notifyDataSetChanged();
 
-        public MyViewHolder(View v) {
-            super(v);
 
-            videoOwner = v.findViewById(R.id.videoOwner);
-            videoTitle=v.findViewById(R.id.videoTitle);
-            videoDate=v.findViewById(R.id.videoDate);
-            videoView =v.findViewById(R.id.videoView);
-            videoUserName=v.findViewById(R.id.videoUsername);
-        }
     }
+
+
+
+//
+//
+//
+
 }

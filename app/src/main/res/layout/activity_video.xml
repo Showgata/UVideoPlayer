@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VideoActivity">
+
+    <RelativeLayout
+        android:id="@+id/ac1rl1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/white_grey_border_bottom"
+        android:layout_marginBottom="@dimen/size_8dp"
+        android:paddingBottom="@dimen/size_8dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/videoPlayerLayout">
+
+            <VideoView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_216dp"
+                android:id="@+id/videoPlayer"/>
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/videoTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:layout_below="@+id/videoPlayerLayout"
+            android:paddingLeft="@dimen/size_16dp"
+            android:paddingRight="@dimen/size_16dp"
+            android:paddingTop="@dimen/size_16dp"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/videoViews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1,200 views"
+            android:layout_below="@+id/videoTitle"
+            android:paddingLeft="@dimen/size_16dp"
+            android:textSize="12sp"
+            android:paddingTop="@dimen/size_8dp" />
+
+
+        <include
+            layout="@layout/snippet_like_unlike_stuff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/videoViews"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ac1rl2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ac1rl1"
+        app:layout_constraintTop_toBottomOf="@+id/ac1rl1">
+
+        <LinearLayout
+            android:id="@+id/fragmentView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:scrollbars="vertical">
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
